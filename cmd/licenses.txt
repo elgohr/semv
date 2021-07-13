@@ -1,0 +1,10 @@
+
++------------------------------------+----------------------------------------------------------------+--------------+
+|     GITHUB COM/ELGOHR/SEMV/CMD     |                            UNKNOWN                             |  APACHE-2.0  |
++------------------------------------+----------------------------------------------------------------+--------------+
+| github.com/coreos/go-semver/semver | https://github.com/coreos/go-semver/blob/master/semver/LICENSE | Apache-2.0   |
+| github.com/spf13/cobra             | https://github.com/spf13/cobra/blob/master/LICENSE.txt         | Apache-2.0   |
+| github.com/spf13/pflag             | https://github.com/spf13/pflag/blob/master/LICENSE             | BSD-3-Clause |
+| github.com/elgohr/semv             | Unknown                                                        | Apache-2.0   |
++------------------------------------+----------------------------------------------------------------+--------------+
+
