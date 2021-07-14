@@ -2,6 +2,9 @@
 
 semv (pronounce [zɛmpf]) is a command line tool for working with semantic versions (semver).
 
+[![Test Status](https://github.com/elgohr/semv/workflows/Test/badge.svg)](https://github.com/elgohr/semv/actions)
+[![Security Status](https://github.com/elgohr/semv/workflows/Gosec/badge.svg)](https://github.com/elgohr/semv/actions)
+
 ## Installation
 
 ### Go
