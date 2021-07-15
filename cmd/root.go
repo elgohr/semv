@@ -15,10 +15,14 @@
 package cmd
 
 import (
+	_ "embed"
 	"fmt"
 	"github.com/spf13/cobra"
 	"os"
 )
+
+//go:embed version.txt
+var version string
 
 func Execute() {
 	cmd := NewRootCmd()
@@ -32,7 +36,7 @@ func NewRootCmd() *cobra.Command {
 	c := &cobra.Command{
 		Use:     "semv",
 		Short:   "To be used for working with semvers",
-		Version: "0.0.1",
+		Version: version,
 	}
 	c.AddCommand(NewIncrementCmd())
 	c.AddCommand(NewEqualsCmd())
