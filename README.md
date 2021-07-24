@@ -18,10 +18,19 @@ Find the binaries in the releases.
 ## Usage
 
 ### Increment
+
+Returns the incremented version.
+
+With the version as a variable
 ```bash
 semv increment (--patch/--minor/--major) ${currentVersion}
 ```
-Returns the incremented version.
+
+Piped from another command
+```bash
+cat oldVersion.txt | semv increment (--patch/--minor/--major)
+```
+
 
 ### Compare
 ```bash

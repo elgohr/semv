@@ -18,6 +18,7 @@ import (
 	"fmt"
 	"github.com/coreos/go-semver/semver"
 	"github.com/spf13/cobra"
+	"io/ioutil"
 	"strings"
 )
 
@@ -29,9 +30,19 @@ func NewIncrementCmd() *cobra.Command {
 	c := &cobra.Command{
 		Use:   "increment",
 		Short: "Increment a semver",
-		Args:  cobra.ExactArgs(1),
+		Args:  cobra.MaximumNArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
-			inputVersion := args[0]
+			var inputVersion string
+			if len(args) > 0 {
+				inputVersion = args[0]
+			} else {
+				in, err := ioutil.ReadAll(cmd.InOrStdin())
+				if err != nil {
+					return err
+				}
+				inputVersion = string(in)
+			}
+
 			hasPrefix := false
 			if strings.HasPrefix(inputVersion, "v") {
 				hasPrefix = true
