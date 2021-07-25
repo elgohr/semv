@@ -19,11 +19,14 @@ secure:
 install-semv:
 	go install github.com/elgohr/semv@latest
 
+newPatchVersion = $(shell git describe --tags --abbrev=0 | semv increment --patch)
 new-patch-release: install-semv
-	export newVersion=$(semv increment --patch $(git describe --tags --abbrev=0)) ; echo ${newVersion} > cmd/version.txt ; git add . ; git commit -m ":tada: Releasing version ${newVersion}" ; git push origin main ; git tag ${newVersion}; git push origin ${newVersion}
+	echo $(newPatchVersion) > cmd/version.txt ; git add . ; git commit -m ":tada: Releasing $(newPatchVersion)" ; git push origin main ; git tag $(newPatchVersion); git push origin $(newPatchVersion)
 
+newMinorVersion = $(shell git describe --tags --abbrev=0 | semv increment --minor)
 new-minor-release: install-semv
-	export newVersion=$(semv increment --minor $(git describe --tags --abbrev=0)) ; echo ${newVersion} > cmd/version.txt ; git add . ; git commit -m ":tada: Releasing version ${newVersion}" ; git push origin main ; git tag ${newVersion}; git push origin ${newVersion}
+	echo $(newMinorVersion) > cmd/version.txt ; git add . ; git commit -m ":tada: Releasing $(newMinorVersion)" ; git push origin main ; git tag $(newMinorVersion); git push origin $(newMinorVersion)
 
+newMajorVersion = $(shell git describe --tags --abbrev=0 | semv increment --major)
 new-major-release: install-semv
-	export newVersion=$(semv increment --major $(git describe --tags --abbrev=0)) ; echo ${newVersion} > cmd/version.txt ; git add . ; git commit -m ":tada: Releasing version ${newVersion}" ; git push origin main ; git tag ${newVersion}; git push origin ${newVersion}
+	echo $(newMajorVersion) > cmd/version.txt ; git add . ; git commit -m ":tada: Releasing $(newMajorVersion)" ; git push origin main ; git tag $(newMajorVersion); git push origin $(newMajorVersion)
