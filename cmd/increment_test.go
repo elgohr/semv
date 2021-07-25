@@ -164,6 +164,16 @@ func TestNewIncrementCmd(t *testing.T) {
 			},
 		},
 		{
+			when:      "bumping patch version from stdin with linebreak",
+			givenArgs: []string{"--patch"},
+			givenStdIn: strings.NewReader("0.0.1\n"),
+			expect: func(t *testing.T, err error, stdOut string, stdErr string) {
+				require.NoError(t, err)
+				require.Equal(t, "0.0.2", stdOut)
+				require.Empty(t, stdErr)
+			},
+		},
+		{
 			when:      "no flag was given",
 			givenArgs: []string{"0.2.5"},
 			expect: func(t *testing.T, err error, stdOut string, stdErr string) {

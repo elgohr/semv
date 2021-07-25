@@ -40,7 +40,7 @@ func NewIncrementCmd() *cobra.Command {
 				if err != nil {
 					return err
 				}
-				inputVersion = string(in)
+				inputVersion = strings.TrimRight(string(in), "\n")
 			}
 
 			hasPrefix := false
