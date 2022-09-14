@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/coreos/go-semver v0.3.0
-	github.com/google/go-licenses v1.3.0
+	github.com/google/go-licenses v1.3.1
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/spf13/cobra v1.5.0
 	github.com/stretchr/testify v1.8.0
@@ -14,7 +14,7 @@ require (
 	github.com/Microsoft/go-winio v0.5.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
-	github.com/golang/glog v1.0.0 // indirect
+	github.com/go-logr/logr v1.2.0 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/google/licenseclassifier v0.0.0-20220326190949-7c62d6fe8d3a // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
@@ -40,4 +40,5 @@ require (
 	gopkg.in/src-d/go-git.v4 v4.13.1 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
+	k8s.io/klog/v2 v2.80.1 // indirect
 )
