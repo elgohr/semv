@@ -1,14 +1,16 @@
 all: test
 
-install-tools:
-	go install github.com/google/go-licenses
-	go install github.com/olekukonko/tablewriter/csv2table
-
-tidy:
+update:
+	go get -u ./...
 	go mod tidy
+	go mod vendor
 
-generate-licenses: install-tools tidy
-	go-licenses csv github.com/elgohr/semv | csv2table -p=true > cmd/licenses.txt
+install-tools:
+	go install github.com/google/go-licenses@latest
+	go install github.com/olekukonko/tablewriter/csv2table@latest
+
+generate-licenses: install-tools
+	go-licenses csv github.com/elgohr/semv | csv2table -p=true -h=false > cmd/licenses.txt
 
 test:
 	go test -race ./...
