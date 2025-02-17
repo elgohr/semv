@@ -8,7 +8,7 @@ require (
 	github.com/coreos/go-semver v0.3.1
 	github.com/google/go-licenses v1.6.0
 	github.com/olekukonko/tablewriter v0.0.5
-	github.com/spf13/cobra v1.8.1
+	github.com/spf13/cobra v1.9.1
 	github.com/stretchr/testify v1.10.0
 )
 
